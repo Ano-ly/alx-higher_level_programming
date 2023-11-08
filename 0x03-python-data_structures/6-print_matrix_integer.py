@@ -7,7 +7,7 @@ def print_matrix_integer(matrix=[[]]):
         i = 0
         for int_ in list_:
             if i == len_ - 1:
-                print("{}".format(int_), end="$\n")
+                print("{:d}".format(int_), end="$\n")
             else:
-                print("{} ".format(int_), end="")
+                print("{:d} ".format(int_), end="")
             i += 1
