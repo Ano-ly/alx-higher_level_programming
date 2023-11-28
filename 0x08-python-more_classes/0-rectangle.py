@@ -3,4 +3,6 @@
 
 
 class Rectangle:
+    """An empty rectangle"""
+
     pass
