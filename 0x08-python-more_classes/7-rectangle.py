@@ -4,6 +4,8 @@
 
 class Rectangle:
     """This is a rectangle"""
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initialises rectangle
@@ -14,6 +16,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -48,3 +51,33 @@ class Rectangle:
                 self.__height = value
             else:
                 raise ValueError("height must be >= 0")
+
+    def area(self):
+        """Returns the area of rectangle"""
+        return (self.width * self.height)
+
+    def perimeter(self):
+        """Returns the perimeter of rectangle"""
+        if (self.width == 0) or (self.height == 0):
+            return (0)
+        else:
+            return (2 * (self.width + self.height))
+
+    def __str__(self):
+        """Prints the string representation of object"""
+        if (self.width == 0) or (self.height == 0):
+            return ("")
+        else:
+            a = str(self.print_symbol)
+            return ("\n".join([a*self.width for i in range(self.height)]))
+
+    def __repr__(self):
+        """Able to generate new object"""
+        a = self.width
+        b = self.height
+        return ("Rectangle({}, {})".format(a, b))
+
+    def __del__(self):
+        """Able to run upon deletion of instance"""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
