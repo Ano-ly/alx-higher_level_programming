@@ -61,12 +61,14 @@ class Rectangle:
             return (2 * (self.width + self.height))
 
     def __str__(self):
+        """Prints the string representation of object"""
         if (self.width == 0) or (self.height == 0):
             return ("")
         else:
             return (("\n".join(["#"*self.width for i in range(self.height)])))
 
     def __repr__(self):
+        """Able to generate new object"""
         a = self.width
         b = self.height
         return ("Rectangle({}, {})".format(a, b))
