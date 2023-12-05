@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
-"""This is an empty class"""
+"""This contains one class"""
 
 
 class BaseGeometry:
+    """This is a basic class"""
+
     def area(self):
         """ Raises an exception"""
 
