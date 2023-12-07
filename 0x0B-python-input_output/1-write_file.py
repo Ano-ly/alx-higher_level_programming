@@ -8,10 +8,9 @@ def write_file(filename="", text=""):
 
     Args:
         filename: name of file to be written to
-	text: stuff to be written
+        text: stuff to be written
 
     """
     with open(filename, "w") as file:
         written_no = file.write(text)
         return (written_no)
-
