@@ -4,6 +4,7 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """This class defines a square"""
 
@@ -15,8 +16,8 @@ class Square(Rectangle):
     def __str__(self):
         """This overrides the __str__ method"""
 
-        return(f"[Square] ({self.id}) {self.x}/{self.y} - "+
-	f"{self.width}")
+        return (f"[Square] ({self.id}) {self.x}/{self.y} - " +
+                f"{self.width}")
 
     @property
     def size(self):

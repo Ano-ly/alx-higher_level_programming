@@ -4,6 +4,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """This class inherits from Base"""
 
@@ -31,7 +32,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -43,7 +44,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -55,7 +56,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -67,7 +68,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         elif value < 0:
             raise ValueError("y must be >= 0")
@@ -75,24 +76,27 @@ class Rectangle(Base):
 
     def area(self):
         """This function returns the area of the rectangle."""
-        return(self.height * self.width)
+        return (self.height * self.width)
 
     def display(self):
         """This function displays the rectange using hashtags"""
         for k in range(self.y):
             print("\n", end="")
         for i in range(self.height):
-            for l in range (self.x):
+            for one in range(self.x):
                 print(" ", end="")
             for j in range(self.width):
                 print("#", end="")
             print("\n", end="")
 
     def __str__(self):
-        """This function returns a formatted version of the printed rectangle"""
+        """
+        This function returns a formatted
+        version of the printed rectangle
+        """
 
-        return(f"[Rectangle] ({self.id}) {self.x}/{self.y} - "+
-	f"{self.width}/{self.height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - " +
+                f"{self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """This function updates class attributes"""
@@ -117,6 +121,7 @@ class Rectangle(Base):
                     self.x = kwargs[item]
                 elif item == "y":
                     self.y = kwargs[item]
+
     def to_dictionary(self):
         """Returns a dictionary representation"""
 
