@@ -1,6 +1,7 @@
-#!usr/bin/python3
+#!/usr/bin/python3
+""" This contains the add_integer function"""
 
-""" This contains the ass_integer function"""
+
 def add_integer(a, b=98):
     """
     print(__import__("my_module").my_function.__doc__)
@@ -10,10 +11,11 @@ def add_integer(a, b=98):
         b: second number
 
     """
+    print(type(a))
 
-    if type(a) is not int and type(a) is not float:
+    if type(a) != "int" and type(a) != "float":
         raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
+    if type(b) != "int" and type(b) != "float":
         raise TypeError("b must be an integer")
     a = int(a)
     b = int(b)

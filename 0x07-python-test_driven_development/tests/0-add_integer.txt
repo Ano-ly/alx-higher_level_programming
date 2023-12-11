@@ -1,25 +1,25 @@
-python3 -c 'print(__import__("my_module").__doc__)
->>> import ../0-add_integer.py
->>> print(4 + 2)
+>>> add_integer = __import__("0-add_integer").add_integer
+>>> add_integer(4, 2)
 6
->>> print(4 + "a")
+>>> add_integer(4, "a")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer("a", 4) #doctest: +ELLIPSIS
 Traceback...
 TypeError
->>> print("a" + 4) #doctest: +ELLIPSIS
-Traceback...
-TypeError
->>> print(4.3 + 4.2)
+>>> add_integer(4.3, 4.2)
 8
->>> print(4.3 + "a")
+>>> add_integer(4.3, "a")
 Traceback...
 TypeError: b must be an integer
->>> print("a" + 4.3)
+>>> add_integer("a", 4.3)
 Traceback...
 TypeError: a must be an integer
->>> print("a" + "a")
+>>> add_integer("a", "a")
 Traceback...
 a must be an integer
->>> print(4.3 + 2)
+>>> add_integer(4.3, 2)
 6
->>> print(2 + 4.3)
+>>> add_integer(2, 4.3)
 6

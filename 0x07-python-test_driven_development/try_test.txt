@@ -1,0 +1,9 @@
+The tests start...
+>>> from tryy import sub
+>>> sub(5, 6)
+   11
+>>> sub(5, -6)
+Traceback (most recent call last):
+    ...
+ValueError: None of the arguments should be negative
+
