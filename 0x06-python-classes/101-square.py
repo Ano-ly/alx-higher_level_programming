@@ -70,7 +70,7 @@ class Square:
         square_list2 = []
         my_list = []
         if self.__size == 0:
-            square_list.append("\n")
+            square_list.append("")
         else:
             for y in range(0, self.__position[1]):
                 square_list.append("\n")
