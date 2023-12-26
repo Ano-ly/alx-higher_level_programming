@@ -1,9 +1,32 @@
 #!/usr/bin/python3
-"""python3 - c 'print(__import__("my_module").__doc__)'
-"""
+"""This document contains a class Square"""
 
 
 class Square:
-    """python3 - c 'print(__import__("my_module").MyClass.__doc__)'
-    """
-    pass
+    """This is a class Square"""
+    def __init__(self, size=0):
+        """
+        This function initialises the square
+
+        Args -
+            size: size to be initialised with
+        """
+        self.__size = size
+
+    @property
+    def size(self):
+        return (self.__size)
+
+    @size.setter
+    def size(self, value):
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+
+    def area(self):
+        """This function computes the area of the square"""
+
+        return (self.__size ** 2)
