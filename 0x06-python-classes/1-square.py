@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-"""python3 - c 'print(__import__("my_module").__doc__)'
-"""
+"""This document contains a class Square"""
 
 
 class Square:
-    """python3 - c 'print(__import__("my_module").MyClass.__doc__)'
-    """
-    pass
+    """This is a class Square"""
+    def __init__(self, size):
+        """
+        This function initialises the square
+
+        Args -
+            size: size to be initialised with
+        """
+        self.__size = size
