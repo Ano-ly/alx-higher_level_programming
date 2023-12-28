@@ -7,9 +7,11 @@ def safe_print_integer(value):
 
             value: value to be printed
     """
+    if value is None:
+        return (None)
     try:
         print("{:d}".format(value))
-    except ValueError:
+    except (ValueError, TypeError):
         return False
     else:
         return True
