@@ -2,10 +2,16 @@
 def list_division(my_list_1, my_list_2, list_length):
     listt = []
     count = 0
-    try:
-        for a, b in my_list_1, my_list_2:
-            if count == list_length:
-                break
+    while count < list_length:
+        try:
+            a = my_list_1[count]
+            b = my_list_2[count]
+        except IndexError:
+            for x in range(count, list_length):
+                listt.append(0)
+            print("out of range")
+            break
+        else:
             try:
                 div = a / b
             except ZeroDivisionError:
@@ -21,6 +27,4 @@ def list_division(my_list_1, my_list_2, list_length):
             else:
                 listt.append(div)
                 count += 1
-    except ValueError:
-        print("out of range")
     return (listt)
