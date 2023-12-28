@@ -18,13 +18,15 @@ def list_division(my_list_1, my_list_2, list_length):
                 print("division by 0")
                 listt.append(0)
                 count += 1
-                continue
             except (ValueError, TypeError):
                 print("wrong type")
                 listt.append(0)
                 count += 1
-                continue
             else:
                 listt.append(div)
                 count += 1
+            finally:
+                continue
+        finally:
+            pass
     return (listt)
