@@ -9,6 +9,7 @@ def list_division(my_list_1, my_list_2, list_length):
         except IndexError:
             for x in range(count, list_length):
                 listt.append(0)
+            count += 1
             print("out of range")
         else:
             try:
