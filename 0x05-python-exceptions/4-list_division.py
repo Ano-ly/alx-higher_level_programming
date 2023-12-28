@@ -10,7 +10,6 @@ def list_division(my_list_1, my_list_2, list_length):
             for x in range(count, list_length):
                 listt.append(0)
             print("out of range")
-            break
         else:
             try:
                 div = a / b
