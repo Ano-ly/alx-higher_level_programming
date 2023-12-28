@@ -8,7 +8,7 @@ def safe_print_integer(value):
             value: value to be printed
     """
     if value is None:
-        return (None)
+        return (False)
     try:
         print("{:d}".format(value))
     except (ValueError, TypeError):
