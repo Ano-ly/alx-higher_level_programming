@@ -4,21 +4,25 @@
 >>> add_integer(4, "a")
 Traceback (most recent call last):
     ...
-TypeError: a must be an integer
+TypeError: b must be an integer
 >>> add_integer("a", 4) #doctest: +ELLIPSIS
-Traceback...
-TypeError
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
 >>> add_integer(4.3, 4.2)
 8
 >>> add_integer(4.3, "a")
-Traceback...
+Traceback (most recent call last):
+    ...
 TypeError: b must be an integer
 >>> add_integer("a", 4.3)
-Traceback...
+Traceback (most recent call last):
+	...
 TypeError: a must be an integer
 >>> add_integer("a", "a")
-Traceback...
-a must be an integer
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
 >>> add_integer(4.3, 2)
 6
 >>> add_integer(2, 4.3)
