@@ -18,10 +18,15 @@ class Test_base(unittest.TestCase):
         self.base_three = Base()
         self.base_four = Base(23)
 
+    def test_default_id_value_at_start(self):
+        """Tests the default values of id"""
+
+        self.assertEqual(self.base_one.id, 1)
+
     def test_default_id_value(self):
         """Tests the default values of id"""
 
-        self.assertEqual(self.base_three.id, 3)
+        self.assertEqual(self.base_two.id, 2)
 
     def test_spec_id_value(self):
         """Tests the specified values of id"""
@@ -32,6 +37,17 @@ class Test_base(unittest.TestCase):
         """Tests the default value of nb_objects"""
 
         self.assertEqual(Base.nb_objects, 0)
+
+    def test_to_json_string(self):
+        """Tests the function to_json_string"""
+
+        self.assertEqual(Base.to_json_string(None), "[]")
+
+    def test_to_json_string(self):
+        """Tests the function to_json_string"""
+
+        self.assertEqual(Base.to_json_string(None), "[]")
+
 
 if __name__ == "__main__":
     unittest.main()
