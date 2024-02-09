@@ -1,2 +1,2 @@
 -- prints the full description of a table
-SELECT * FROM first_table;
+SHOW TABLE first_table;
