@@ -17,5 +17,17 @@ if (len === 2 || len === 3) {
       x = Number(val);
     }
   });
-  console.log(x);
+  let y = 0;
+  myArg.forEach((val, index) => {
+    if (Number(val) < x) {
+      y = Number(val);
+    }
+  });
+  myArg.forEach((val, index) => {
+    if ((Number(val) > y) && (Number(val) !== x)) {
+      y = Number(val);
+    }
+  });
+
+  console.log(y);
 }
