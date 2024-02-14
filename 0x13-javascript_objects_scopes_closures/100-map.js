@@ -2,8 +2,6 @@
 
 const list = require('./100-data.js').list;
 
-const newList = list.map(function (n) {
-  return (n * list.indexOf(n));
-});
+const newList = list.map((number, inx) => (number * inx));
 console.log(list);
 console.log(newList);
