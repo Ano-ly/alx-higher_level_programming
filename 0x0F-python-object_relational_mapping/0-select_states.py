@@ -14,3 +14,6 @@ mycur.execute("SELECT * FROM states ORDER BY states.id ASC")
 intable = mycur.fetchall()
 for row in intable:
     print("({}: '{}')".format(row[0], row[1]))
+
+if __name__ == "main":
+    main()
