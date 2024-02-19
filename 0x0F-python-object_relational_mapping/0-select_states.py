@@ -2,9 +2,11 @@
 import MySQLdb
 import sys
 
-# This module accesses a database
+"""This module accesses a database"""
 
 if __name__ == "__main__":
+    """Does not execute when imported"""
+
     args = sys.argv
 
     db1 = MySQLdb.connect(host='localhost', port=3306, 
