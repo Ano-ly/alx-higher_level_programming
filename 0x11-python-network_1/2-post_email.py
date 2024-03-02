@@ -18,4 +18,4 @@ if __name__ == "__main__":
     my_data = my_data.encode('ascii')
     message = urllib.request.Request(url_sup, my_data)
     with urllib.request.urlopen(message) as in_resp:
-        print(in_resp.decode('utf-8'))
+        print(in_resp.read().decode('utf-8'))
