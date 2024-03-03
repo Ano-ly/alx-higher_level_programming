@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""This program file fetches https://alx-intranet.hbtn.io/status"""
+"""Obtains the id of a user from using
+GitHub API and accepts the username and password
+or authentication token as command line arguments."""
 
 
 if __name__ == "__main__":
-    import urllib.request
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as resp:
-        resp_read = resp.read()
-        print("Body response:\n\t- type: {}\n\t-\
-              content: {}\n\t- utf8 content: {}".
-              format(type(resp_read), resp_read, resp_read.decode('utf-8')))
+    import requests
+    import sys
+    args = sys.argv
+    resp = requests.get("https://api.github.com/user", auth=(args[1], args[2]))
+    print(resp)
