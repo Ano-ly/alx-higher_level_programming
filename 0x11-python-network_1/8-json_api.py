@@ -16,8 +16,12 @@ if __name__ == "__main__":
     req = requests.post('http://0.0.0.0:5000/search_user', data={"q": letter})
     try:
         j_dic = req.json()
+        if j_dic == {}:
+            print("No result")
+        else:
+            print("[{}] {}".format(j_dic['id'], j_dic['name']))
     except requests.exceptions.JSONDecodeError:
-        if r.status_code == 204:
+        if req.status_code == 204:
             print("No result")
         else:
             print("Not a valid JSON")
