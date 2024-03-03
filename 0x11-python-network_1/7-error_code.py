@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-"""This program file fetches https://alx-intranet.hbtn.io/status"""
+"""
+This program file sends request to a URL and displays the error
+code if it is greater than or equal to 400
+"""
 
 
 if __name__ == "__main__":
-    import urllib.request
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as resp:
-        resp_read = resp.read()
-        print("Body response:\n\t- type: {}\n\t-\
-              content: {}\n\t- utf8 content: {}".
-              format(type(resp_read), resp_read, resp_read.decode('utf-8')))
+    import requests
+    import sys
+    args = sys.argv
+    try:
+        my_req = requests.get(argv[1])
+    except HTTPError as err:
+        if my_req.status_code >= 400:
+            print("Error code: {}".format(my_req.status_code))

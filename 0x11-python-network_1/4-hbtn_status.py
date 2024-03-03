@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""This program file fetches https://alx-intranet.hbtn.io/status"""
+"""
+This program file fetches https://alx-intranet.hbtn.io/status
+using the requests package
+"""
 
 
 if __name__ == "__main__":
-    import urllib.request
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as resp:
-        resp_read = resp.read()
-        print("Body response:\n\t- type: {}\n\t-\
-              content: {}\n\t- utf8 content: {}".
-              format(type(resp_read), resp_read, resp_read.decode('utf-8')))
+    import requests
+    my_req = requests.get('https://alx-intranet.hbtn.io/status')
+    print("Body response:\n\t- type: {}\n\t- content: {}".
+          format(type(my_req), my_req.content))

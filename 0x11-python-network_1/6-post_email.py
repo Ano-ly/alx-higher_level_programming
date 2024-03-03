@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""This program file fetches https://alx-intranet.hbtn.io/status"""
+"""
+This program file sends request to a URL and displays the value of
+a variable in the http response header
+"""
 
 
 if __name__ == "__main__":
-    import urllib.request
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as resp:
-        resp_read = resp.read()
-        print("Body response:\n\t- type: {}\n\t-\
-              content: {}\n\t- utf8 content: {}".
-              format(type(resp_read), resp_read, resp_read.decode('utf-8')))
+    import requests
+    import sys
+    args = sys.argv
+    val_dic = {"email": args[2])
+    my_req = requests.post(argv[1], param=val_dic)
+    print(my_req.content)
