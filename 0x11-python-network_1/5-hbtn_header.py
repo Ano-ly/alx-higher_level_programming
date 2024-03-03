@@ -9,6 +9,6 @@ if __name__ == "__main__":
     import requests
     import sys
     args = sys.argv
-    my_req = requests.get(argv[1])
+    my_req = requests.get(args[1])
     val = my_req.headers.get('X-Request-Id')
     print(val)

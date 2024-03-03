@@ -9,6 +9,6 @@ if __name__ == "__main__":
     import requests
     import sys
     args = sys.argv
-    val_dic = {"email": args[2])
-    my_req = requests.post(argv[1], param=val_dic)
-    print(my_req.content)
+    val_dic = {"email": args[2]}
+    my_req = requests.post(args[1], data=val_dic)
+    print(my_req.text)
