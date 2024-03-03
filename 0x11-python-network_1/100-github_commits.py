@@ -8,8 +8,8 @@ if __name__ == "__main__":
     import requests
     import sys
     args = sys.argv
-    url = "https://api.github.com/repos/" + str(args[1]) +\
-          '/' + str(args[2]) + "/commits"
+    url = "https://api.github.com/repos/" + str(args[2]) +\
+          '/' + str(args[1]) + "/commits"
     resp = requests.get(url)
     resp_list = resp.json()
     times = 0
