@@ -21,7 +21,4 @@ if __name__ == "__main__":
         else:
             print("[{}] {}".format(j_dic['id'], j_dic['name']))
     except requests.exceptions.JSONDecodeError:
-        if req.status_code == 204:
-            print("No result")
-        else:
             print("Not a valid JSON")
