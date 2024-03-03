@@ -9,4 +9,9 @@ if __name__ == "__main__":
     import sys
     args = sys.argv
     resp = requests.get("https://api.github.com/user", auth=(args[1], args[2]))
-    print(resp)
+    my_str = resp.text
+    my_list = my_str.split(',')
+    for item in my_list:
+        if "\"id\"" in item:
+            item_dic = item.split(":")
+            print(item_dic[1])
