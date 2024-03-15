@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""This module accesses a database"""
 import MySQLdb
 import sys
 
-"""This module accesses a database"""
 
 if __name__ == "__main__":
     """Does not execute when imported"""
