@@ -13,7 +13,7 @@ if __name__ == "__main__":
                       user=args[1], passwd=args[2], db=args[3])
     mycur = db1.cursor()
 
-    mycur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    mycur.execute("SELECT * FROM states WHERE name[0] = 'A' ORDER BY states.id ASC")
     intable = mycur.fetchall()
     for row in intable:
         print("({}, '{}')".format(row[0], row[1]))
