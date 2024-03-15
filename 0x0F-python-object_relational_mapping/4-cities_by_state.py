@@ -22,4 +22,4 @@ if __name__ == "__main__":
                   states.id ORDER BY cities.id ASC")
     intable = mycur.fetchall()
     for row in intable:
-        print("({}, '{}', '{}')".format(row[0], row[1], row[2]))
+        print("({}, \'{}\', \'{}\')".format(row[0], row[1], row[2]))
