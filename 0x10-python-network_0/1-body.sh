@@ -1,7 +1,7 @@
 #!/bin/bash
 # Send get request and display body if status code is 200
 
-response=$(curl -sw '\n%{http_code}\n' $1)
+response=$(curl -sw '\n%{http_code}\n' "$1")
 
 statuscode=$(echo "${response}" | tail -n 1)
 
