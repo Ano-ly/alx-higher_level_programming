@@ -22,7 +22,10 @@ if __name__ == '__main__':
     new_session = Session()
 
     objs = new_session.query(State).filter(State.id == 1)
-    my_row = objs.first()
-    print("{}: {}".format(my_row.id, my_row.name))
+    if objs is None:
+        print("Nothing")
+    else:
+        my_row = objs.first()
+        print("{}: {}".format(my_row.id, my_row.name))
 
     new_session.close()
