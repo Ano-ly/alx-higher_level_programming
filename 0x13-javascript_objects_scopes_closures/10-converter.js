@@ -1,5 +1,7 @@
 #!/usr/bin/node
 
 exports.converter = function (base) {
-  return (decimalValue.toString(base);
-}
+  return function (y) {
+    return y.toString(base);
+  };
+};
