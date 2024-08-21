@@ -21,9 +21,8 @@ if __name__ == '__main__':
     Session = sessionmaker(my_engine)
     new_session = Session()
 
-    objs = new_session.query(State).order_by(State.id)
-    for my_row in objs.all():
-        if 'a' in my_row.name:
-            new_session.delete(my_row)
+    objs = new_session.query(State).filter(State.name.like('%a%')).all()
+    for my_row in objs:
+        new_session.delete(my_row)
     new_session.commit()
     new_session.close()
