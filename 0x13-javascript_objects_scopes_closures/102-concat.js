@@ -8,11 +8,6 @@ fs.appendFile(args[4], args[2], function (err) {
     throw err;
   }
 });
-fs.appendFile(args[4], '\n', function (err) {
-  if (err) {
-    throw err;
-  }
-});
 fs.appendFile(args[4], args[3], function (err) {
   if (err) {
     throw err;
